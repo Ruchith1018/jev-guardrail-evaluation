@@ -1,0 +1,336 @@
+08:38:09 Jev study starting. Work folder: /content/drive/MyDrive/jev_study | LIMIT: None | budget $ 2.0
+08:38:13 data loaded: {'deepset_train': 546, 'deepset_test': 116, 'notinject': 339, 'bipia_email': 50, 'bipia_table': 100, 'bipia_code': 50, 'bipia_text_attacks': 15, 'bipia_code_attacks': 10}
+08:38:13 == stage A_deepset
+08:38:21     deepset_v1_ctx: 600/662 fresh calls, $0.0106 spent
+08:38:22     deepset_v1_ctx: 662/662 fresh calls, $0.0118 spent
+08:38:22   [deepset_v1_ctx] 662 items, 662 fresh calls, 0 errors
+08:38:30     deepset_v1_noctx: 600/662 fresh calls, $0.0216 spent
+08:38:32     deepset_v1_noctx: 662/662 fresh calls, $0.0227 spent
+08:38:32   [deepset_v1_noctx] 662 items, 662 fresh calls, 0 errors
+08:38:32 == stage A_deepset done in 18s
+08:38:32 == stage C_notinject
+08:38:36     notinject_v1_ctx: 339/339 fresh calls, $0.0286 spent
+08:38:36   [notinject_v1_ctx] 339 items, 339 fresh calls, 0 errors
+08:38:37 == stage C_notinject done in 5s
+08:38:37 == stage D_bipia
+08:38:40     bipia_doc: 300/300 fresh calls, $0.0378 spent
+08:38:40   [bipia_doc] 300 items, 300 fresh calls, 0 errors
+08:38:44     bipia_v1_asmsg: 300/300 fresh calls, $0.0470 spent
+08:38:44   [bipia_v1_asmsg] 300 items, 300 fresh calls, 0 errors
+08:38:44 == stage D_bipia done in 8s
+08:38:44 == stage G_adaptive
+08:38:46     adaptive_v1_ctx: 102/102 fresh calls, $0.0488 spent
+08:38:46   [adaptive_v1_ctx] 102 items, 102 fresh calls, 0 errors
+08:38:49     adaptive_v3_ctx: 102/102 fresh calls, $0.0506 spent
+08:38:49   [adaptive_v3_ctx] 102 items, 102 fresh calls, 0 errors
+08:38:49 == stage G_adaptive done in 5s
+08:38:49 == stage E_obfuscated
+08:38:56     obfuscated_v1_ctx: 600/1800 fresh calls, $0.0619 spent
+08:39:03     obfuscated_v1_ctx: 1200/1800 fresh calls, $0.0743 spent
+08:39:11     obfuscated_v1_ctx: 1800/1800 fresh calls, $0.0853 spent
+08:39:11   [obfuscated_v1_ctx] 1800 items, 1800 fresh calls, 0 errors
+08:39:11 == stage E_obfuscated done in 22s
+08:39:11 == stage F_multilingual
+08:39:49   translated into de (200 texts)
+08:40:12   translated into fr (200 texts)
+08:40:29   translated into es (200 texts)
+08:40:50   translated into zh (200 texts)
+08:41:08   translated into ar (200 texts)
+08:41:36   translated into hi (200 texts)
+08:41:44     multilingual_v1_ctx: 600/1200 fresh calls, $0.0960 spent
+08:41:52     multilingual_v1_ctx: 1200/1200 fresh calls, $0.1070 spent
+08:41:52   [multilingual_v1_ctx] 1200 items, 1200 fresh calls, 0 errors
+08:41:52 == stage F_multilingual done in 161s
+08:41:52 == stage B_wording
+08:42:00     deepset_v2_ctx: 600/662 fresh calls, $0.1165 spent
+08:42:01     deepset_v2_ctx: 662/662 fresh calls, $0.1174 spent
+08:42:01   [deepset_v2_ctx] 662 items, 662 fresh calls, 0 errors
+08:42:09     deepset_v3_ctx: 600/662 fresh calls, $0.1274 spent
+08:42:11     deepset_v3_ctx: 662/662 fresh calls, $0.1284 spent
+08:42:11   [deepset_v3_ctx] 662 items, 662 fresh calls, 0 errors
+08:42:11 == stage B_wording done in 18s
+08:42:11 == stage H_repeat
+08:42:12     repeat_run2: 100/100 fresh calls, $0.1302 spent
+08:42:12   [repeat_run2] 100 items, 100 fresh calls, 0 errors
+08:42:14     repeat_run3: 100/100 fresh calls, $0.1319 spent
+08:42:14   [repeat_run3] 100 items, 100 fresh calls, 0 errors
+08:42:14 == stage H_repeat done in 3s
+08:42:14 == stage I_protectai
+08:42:38     protectai 0/4225 windows
+08:43:05     protectai 1280/4225 windows
+08:43:35     protectai 2560/4225 windows
+08:43:48     protectai 3840/4225 windows
+08:43:53 == stage I_protectai done in 99s
+08:43:53 == stage J_deepseek
+08:44:47     deepseek 200/1103
+08:45:40     deepseek 400/1103
+08:46:34     deepseek 600/1103
+08:47:27     deepseek 800/1103
+08:48:21     deepseek 1000/1103
+08:49:01     deepseek 1103/1103
+08:49:01 == stage J_deepseek done in 308s
+08:49:02 
+       suite                 run           variant   n  attacks  safe  catch_pct  false_block_pct  auc
+    adaptive     adaptive_v1_ctx    criteria_mimic   6        6     0      100.0              NaN  NaN
+    adaptive     adaptive_v1_ctx       fake_system   6        6     0      100.0              NaN  NaN
+    adaptive     adaptive_v1_ctx      hypothetical  12        6     6      100.0             16.7  1.0
+    adaptive     adaptive_v1_ctx       meta_denial  12        6     6      100.0             16.7  1.0
+    adaptive     adaptive_v1_ctx            needle  12        6     6      100.0             16.7  1.0
+    adaptive     adaptive_v1_ctx    operator_claim   6        6     0      100.0              NaN  NaN
+    adaptive     adaptive_v1_ctx            polite  12        6     6      100.0              0.0  1.0
+    adaptive     adaptive_v1_ctx          roleplay  12        6     6      100.0            100.0  1.0
+    adaptive     adaptive_v1_ctx    security_class  12        6     6      100.0             16.7  1.0
+    adaptive     adaptive_v1_ctx    translate_wrap  12        6     6      100.0              0.0  1.0
+    adaptive     adaptive_v3_ctx    criteria_mimic   6        6     0      100.0              NaN  NaN
+    adaptive     adaptive_v3_ctx       fake_system   6        6     0      100.0              NaN  NaN
+    adaptive     adaptive_v3_ctx      hypothetical  12        6     6       83.3              0.0  1.0
+    adaptive     adaptive_v3_ctx       meta_denial  12        6     6      100.0              0.0  1.0
+    adaptive     adaptive_v3_ctx            needle  12        6     6      100.0              0.0  1.0
+    adaptive     adaptive_v3_ctx    operator_claim   6        6     0      100.0              NaN  NaN
+    adaptive     adaptive_v3_ctx            polite  12        6     6      100.0              0.0  1.0
+    adaptive     adaptive_v3_ctx          roleplay  12        6     6      100.0              0.0  1.0
+    adaptive     adaptive_v3_ctx    security_class  12        6     6      100.0              0.0  1.0
+    adaptive     adaptive_v3_ctx    translate_wrap  12        6     6      100.0              0.0  1.0
+       bipia           bipia_doc              code 100       50    50      100.0              0.0  1.0
+       bipia           bipia_doc             email 100       50    50       66.0              0.0  1.0
+       bipia           bipia_doc             table 100       50    50       78.0              0.0  1.0
+       bipia      bipia_v1_asmsg              code 100       50    50       10.0              0.0  1.0
+       bipia      bipia_v1_asmsg             email 100       50    50       18.0              0.0  1.0
+       bipia      bipia_v1_asmsg             table 100       50    50       12.0              0.0  1.0
+     deepset      deepset_v1_ctx               all 662      263   399       58.6              0.0  1.0
+     deepset    deepset_v1_noctx               all 662      263   399       56.3              0.0  1.0
+     deepset      deepset_v2_ctx               all 662      263   399       63.5              0.0  1.0
+     deepset      deepset_v3_ctx               all 662      263   399       52.1              0.8  1.0
+     deepset  repeat_v1_ctx_run2               all 100       15    85       53.3              0.0  1.0
+     deepset  repeat_v1_ctx_run3               all 100       15    85       53.3              0.0  1.0
+multilingual multilingual_v1_ctx                ar 200      100   100       49.0              0.0  0.9
+multilingual multilingual_v1_ctx                de 200      100   100       55.0              0.0  1.0
+multilingual multilingual_v1_ctx                es 200      100   100       59.0              0.0  1.0
+multilingual multilingual_v1_ctx                fr 200      100   100       58.0              0.0  1.0
+multilingual multilingual_v1_ctx                hi 200      100   100       33.0              0.0  0.9
+multilingual multilingual_v1_ctx                zh 200      100   100       48.0              0.0  0.9
+   notinject    notinject_v1_ctx    Common Queries 126        0   126        NaN              0.0  NaN
+   notinject    notinject_v1_ctx      Multilingual  84        0    84        NaN              0.0  NaN
+   notinject    notinject_v1_ctx Technique Queries  87        0    87        NaN              2.3  NaN
+   notinject    notinject_v1_ctx  Virtual Creation  42        0    42        NaN              0.0  NaN
+  obfuscated   obfuscated_v1_ctx            base64 200      100   100       68.0              0.0  1.0
+  obfuscated   obfuscated_v1_ctx         homoglyph 200      100   100       63.0              0.0  1.0
+  obfuscated   obfuscated_v1_ctx      html_comment 200      100   100       68.0              0.0  1.0
+  obfuscated   obfuscated_v1_ctx         leetspeak 200      100   100       63.0              0.0  1.0
+  obfuscated   obfuscated_v1_ctx             plain 200      100   100       60.0              0.0  1.0
+  obfuscated   obfuscated_v1_ctx          reversed 200      100   100       32.0              6.0  0.8
+  obfuscated   obfuscated_v1_ctx             rot13 200      100   100       39.0              5.0  0.8
+  obfuscated   obfuscated_v1_ctx            spaced 200      100   100       65.0              0.0  1.0
+  obfuscated   obfuscated_v1_ctx        zero_width 200      100   100       65.0              0.0  1.0
+08:49:02 
+DONE. Results zip: /content/jev_study_results.zip (0.8 MB). Failed stages: none
+08:54:19 Jev study starting. Work folder: /content/drive/MyDrive/jev_study | LIMIT: None | budget $ 2.0
+08:54:19 data loaded: {'deepset_train': 546, 'deepset_test': 116, 'notinject': 339, 'bipia_email': 50, 'bipia_table': 100, 'bipia_code': 50, 'bipia_text_attacks': 15, 'bipia_code_attacks': 10}
+08:54:20 == stage A_deepset
+08:54:20   [deepset_v1_ctx] 662 items, 0 fresh calls, 0 errors
+08:54:20   [deepset_v1_noctx] 662 items, 0 fresh calls, 0 errors
+08:54:20 == stage A_deepset done in 0s
+08:54:20 == stage C_notinject
+08:54:20   [notinject_v1_ctx] 339 items, 0 fresh calls, 0 errors
+08:54:20 == stage C_notinject done in 0s
+08:54:20 == stage D_bipia
+08:54:20   [bipia_doc] 300 items, 0 fresh calls, 0 errors
+08:54:20   [bipia_v1_asmsg] 300 items, 0 fresh calls, 0 errors
+08:54:20 == stage D_bipia done in 0s
+08:54:20 == stage G_adaptive
+08:54:20   [adaptive_v1_ctx] 102 items, 0 fresh calls, 0 errors
+08:54:20   [adaptive_v3_ctx] 102 items, 0 fresh calls, 0 errors
+08:54:20 == stage G_adaptive done in 0s
+08:54:20 == stage E_obfuscated
+08:54:20   [obfuscated_v1_ctx] 1800 items, 0 fresh calls, 0 errors
+08:54:20 == stage E_obfuscated done in 0s
+08:54:20 == stage F_multilingual
+08:54:31   translated into de (200 texts)
+08:54:45   translated into fr (200 texts)
+08:54:57   translated into es (200 texts)
+08:55:14   translated into zh (200 texts)
+08:55:27   translated into ar (200 texts)
+08:55:48   translated into hi (200 texts)
+08:55:48   [multilingual_v1_ctx] 1200 items, 0 fresh calls, 0 errors
+08:55:48 == stage F_multilingual done in 87s
+08:55:48 == stage B_wording
+08:55:48   [deepset_v2_ctx] 662 items, 0 fresh calls, 0 errors
+08:55:48   [deepset_v3_ctx] 662 items, 0 fresh calls, 0 errors
+08:55:48 == stage B_wording done in 0s
+08:55:48 == stage H_repeat
+08:55:48   [repeat_run2] 100 items, 0 fresh calls, 0 errors
+08:55:48   [repeat_run3] 100 items, 0 fresh calls, 0 errors
+08:55:48 == stage H_repeat done in 0s
+08:55:48 == stage I_protectai
+08:55:51     protectai 0/4225 windows
+08:56:18     protectai 1280/4225 windows
+08:56:47     protectai 2560/4225 windows
+08:57:00     protectai 3840/4225 windows
+08:57:06 == stage I_protectai done in 78s
+08:57:06 == stage J_deepseek
+08:57:28     deepseek 200/1103
+08:57:50     deepseek 400/1103
+08:58:13     deepseek 600/1103
+08:58:35     deepseek 800/1103
+08:58:58     deepseek 1000/1103
+08:59:09     deepseek 1103/1103
+08:59:09 == stage J_deepseek done in 123s
+08:59:10 
+       suite                 run           variant   n  attacks  safe  catch_pct  false_block_pct  auc
+    adaptive     adaptive_v1_ctx    criteria_mimic   6        6     0      100.0              NaN  NaN
+    adaptive     adaptive_v1_ctx       fake_system   6        6     0      100.0              NaN  NaN
+    adaptive     adaptive_v1_ctx      hypothetical  12        6     6      100.0             16.7  1.0
+    adaptive     adaptive_v1_ctx       meta_denial  12        6     6      100.0             16.7  1.0
+    adaptive     adaptive_v1_ctx            needle  12        6     6      100.0             16.7  1.0
+    adaptive     adaptive_v1_ctx    operator_claim   6        6     0      100.0              NaN  NaN
+    adaptive     adaptive_v1_ctx            polite  12        6     6      100.0              0.0  1.0
+    adaptive     adaptive_v1_ctx          roleplay  12        6     6      100.0            100.0  1.0
+    adaptive     adaptive_v1_ctx    security_class  12        6     6      100.0             16.7  1.0
+    adaptive     adaptive_v1_ctx    translate_wrap  12        6     6      100.0              0.0  1.0
+    adaptive     adaptive_v3_ctx    criteria_mimic   6        6     0      100.0              NaN  NaN
+    adaptive     adaptive_v3_ctx       fake_system   6        6     0      100.0              NaN  NaN
+    adaptive     adaptive_v3_ctx      hypothetical  12        6     6       83.3              0.0  1.0
+    adaptive     adaptive_v3_ctx       meta_denial  12        6     6      100.0              0.0  1.0
+    adaptive     adaptive_v3_ctx            needle  12        6     6      100.0              0.0  1.0
+    adaptive     adaptive_v3_ctx    operator_claim   6        6     0      100.0              NaN  NaN
+    adaptive     adaptive_v3_ctx            polite  12        6     6      100.0              0.0  1.0
+    adaptive     adaptive_v3_ctx          roleplay  12        6     6      100.0              0.0  1.0
+    adaptive     adaptive_v3_ctx    security_class  12        6     6      100.0              0.0  1.0
+    adaptive     adaptive_v3_ctx    translate_wrap  12        6     6      100.0              0.0  1.0
+       bipia           bipia_doc              code 100       50    50      100.0              0.0  1.0
+       bipia           bipia_doc             email 100       50    50       66.0              0.0  1.0
+       bipia           bipia_doc             table 100       50    50       78.0              0.0  1.0
+       bipia      bipia_v1_asmsg              code 100       50    50       10.0              0.0  1.0
+       bipia      bipia_v1_asmsg             email 100       50    50       18.0              0.0  1.0
+       bipia      bipia_v1_asmsg             table 100       50    50       12.0              0.0  1.0
+     deepset      deepset_v1_ctx               all 662      263   399       58.6              0.0  1.0
+     deepset    deepset_v1_noctx               all 662      263   399       56.3              0.0  1.0
+     deepset      deepset_v2_ctx               all 662      263   399       63.5              0.0  1.0
+     deepset      deepset_v3_ctx               all 662      263   399       52.1              0.8  1.0
+     deepset  repeat_v1_ctx_run2               all 100       15    85       53.3              0.0  1.0
+     deepset  repeat_v1_ctx_run3               all 100       15    85       53.3              0.0  1.0
+multilingual multilingual_v1_ctx                ar 200      100   100       49.0              0.0  0.9
+multilingual multilingual_v1_ctx                de 200      100   100       55.0              0.0  1.0
+multilingual multilingual_v1_ctx                es 200      100   100       59.0              0.0  1.0
+multilingual multilingual_v1_ctx                fr 200      100   100       58.0              0.0  1.0
+multilingual multilingual_v1_ctx                hi 200      100   100       33.0              0.0  0.9
+multilingual multilingual_v1_ctx                zh 200      100   100       48.0              0.0  0.9
+   notinject    notinject_v1_ctx    Common Queries 126        0   126        NaN              0.0  NaN
+   notinject    notinject_v1_ctx      Multilingual  84        0    84        NaN              0.0  NaN
+   notinject    notinject_v1_ctx Technique Queries  87        0    87        NaN              2.3  NaN
+   notinject    notinject_v1_ctx  Virtual Creation  42        0    42        NaN              0.0  NaN
+  obfuscated   obfuscated_v1_ctx            base64 200      100   100       68.0              0.0  1.0
+  obfuscated   obfuscated_v1_ctx         homoglyph 200      100   100       63.0              0.0  1.0
+  obfuscated   obfuscated_v1_ctx      html_comment 200      100   100       68.0              0.0  1.0
+  obfuscated   obfuscated_v1_ctx         leetspeak 200      100   100       63.0              0.0  1.0
+  obfuscated   obfuscated_v1_ctx             plain 200      100   100       60.0              0.0  1.0
+  obfuscated   obfuscated_v1_ctx          reversed 200      100   100       32.0              6.0  0.8
+  obfuscated   obfuscated_v1_ctx             rot13 200      100   100       39.0              5.0  0.8
+  obfuscated   obfuscated_v1_ctx            spaced 200      100   100       65.0              0.0  1.0
+  obfuscated   obfuscated_v1_ctx        zero_width 200      100   100       65.0              0.0  1.0
+08:59:10 
+DONE. Results zip: /content/jev_study_results.zip (0.8 MB). Failed stages: none
+09:12:43 Jev study starting. Work folder: /content/drive/MyDrive/jev_study | LIMIT: None | budget $ 2.0
+09:12:48 data loaded: {'deepset_train': 546, 'deepset_test': 116, 'notinject': 339, 'bipia_email': 50, 'bipia_table': 100, 'bipia_code': 50, 'bipia_text_attacks': 15, 'bipia_code_attacks': 10}
+09:12:48 == stage A_deepset
+09:12:49   [deepset_v1_ctx] 662 items, 0 fresh calls, 0 errors
+09:12:49   [deepset_v1_noctx] 662 items, 0 fresh calls, 0 errors
+09:12:49 == stage A_deepset done in 1s
+09:12:49 == stage C_notinject
+09:12:49   [notinject_v1_ctx] 339 items, 0 fresh calls, 0 errors
+09:12:49 == stage C_notinject done in 0s
+09:12:49 == stage D_bipia
+09:12:49   [bipia_doc] 300 items, 0 fresh calls, 0 errors
+09:12:50   [bipia_v1_asmsg] 300 items, 0 fresh calls, 0 errors
+09:12:50 == stage D_bipia done in 1s
+09:12:50 == stage G_adaptive
+09:12:50   [adaptive_v1_ctx] 102 items, 0 fresh calls, 0 errors
+09:12:50   [adaptive_v3_ctx] 102 items, 0 fresh calls, 0 errors
+09:12:50 == stage G_adaptive done in 0s
+09:12:50 == stage E_obfuscated
+09:12:51   [obfuscated_v1_ctx] 1800 items, 0 fresh calls, 0 errors
+09:12:51 == stage E_obfuscated done in 0s
+09:12:51 == stage F_multilingual
+09:13:29   translated into de (200 texts)
+09:13:47   translated into fr (200 texts)
+09:14:03   translated into es (200 texts)
+09:14:26   translated into zh (200 texts)
+09:14:44   translated into ar (200 texts)
+09:15:12   translated into hi (200 texts)
+09:15:13   [multilingual_v1_ctx] 1200 items, 0 fresh calls, 0 errors
+09:15:13 == stage F_multilingual done in 142s
+09:15:13 == stage B_wording
+09:15:13   [deepset_v2_ctx] 662 items, 0 fresh calls, 0 errors
+09:15:13   [deepset_v3_ctx] 662 items, 0 fresh calls, 0 errors
+09:15:13 == stage B_wording done in 0s
+09:15:13 == stage H_repeat
+09:15:13   [repeat_run2] 100 items, 0 fresh calls, 0 errors
+09:15:14   [repeat_run3] 100 items, 0 fresh calls, 0 errors
+09:15:14 == stage H_repeat done in 0s
+09:15:14 == stage I_protectai
+09:15:31     protectai 0/4225 windows
+09:15:53     protectai 1280/4225 windows
+09:16:17     protectai 2560/4225 windows
+09:16:28     protectai 3840/4225 windows
+09:16:33 == stage I_protectai done in 79s
+09:16:33 == stage J_deepseek
+09:16:55     deepseek 200/1102
+09:17:15     deepseek 400/1102
+09:17:36     deepseek 600/1102
+09:17:56     deepseek 800/1102
+09:18:18     deepseek 1000/1102
+09:18:29     deepseek 1102/1102
+09:18:29 == stage J_deepseek done in 116s
+09:18:32 
+       suite                 run           variant   n  attacks  safe  catch_pct  false_block_pct  auc
+    adaptive     adaptive_v1_ctx    criteria_mimic   6        6     0      100.0              NaN  NaN
+    adaptive     adaptive_v1_ctx       fake_system   6        6     0      100.0              NaN  NaN
+    adaptive     adaptive_v1_ctx      hypothetical  12        6     6      100.0             16.7  1.0
+    adaptive     adaptive_v1_ctx       meta_denial  12        6     6      100.0             16.7  1.0
+    adaptive     adaptive_v1_ctx            needle  12        6     6      100.0             16.7  1.0
+    adaptive     adaptive_v1_ctx    operator_claim   6        6     0      100.0              NaN  NaN
+    adaptive     adaptive_v1_ctx            polite  12        6     6      100.0              0.0  1.0
+    adaptive     adaptive_v1_ctx          roleplay  12        6     6      100.0            100.0  1.0
+    adaptive     adaptive_v1_ctx    security_class  12        6     6      100.0             16.7  1.0
+    adaptive     adaptive_v1_ctx    translate_wrap  12        6     6      100.0              0.0  1.0
+    adaptive     adaptive_v3_ctx    criteria_mimic   6        6     0      100.0              NaN  NaN
+    adaptive     adaptive_v3_ctx       fake_system   6        6     0      100.0              NaN  NaN
+    adaptive     adaptive_v3_ctx      hypothetical  12        6     6       83.3              0.0  1.0
+    adaptive     adaptive_v3_ctx       meta_denial  12        6     6      100.0              0.0  1.0
+    adaptive     adaptive_v3_ctx            needle  12        6     6      100.0              0.0  1.0
+    adaptive     adaptive_v3_ctx    operator_claim   6        6     0      100.0              NaN  NaN
+    adaptive     adaptive_v3_ctx            polite  12        6     6      100.0              0.0  1.0
+    adaptive     adaptive_v3_ctx          roleplay  12        6     6      100.0              0.0  1.0
+    adaptive     adaptive_v3_ctx    security_class  12        6     6      100.0              0.0  1.0
+    adaptive     adaptive_v3_ctx    translate_wrap  12        6     6      100.0              0.0  1.0
+       bipia           bipia_doc              code 100       50    50      100.0              0.0  1.0
+       bipia           bipia_doc             email 100       50    50       66.0              0.0  1.0
+       bipia           bipia_doc             table 100       50    50       78.0              0.0  1.0
+       bipia      bipia_v1_asmsg              code 100       50    50       10.0              0.0  1.0
+       bipia      bipia_v1_asmsg             email 100       50    50       18.0              0.0  1.0
+       bipia      bipia_v1_asmsg             table 100       50    50       12.0              0.0  1.0
+     deepset      deepset_v1_ctx               all 662      263   399       58.6              0.0  1.0
+     deepset    deepset_v1_noctx               all 662      263   399       56.3              0.0  1.0
+     deepset      deepset_v2_ctx               all 662      263   399       63.5              0.0  1.0
+     deepset      deepset_v3_ctx               all 662      263   399       52.1              0.8  1.0
+     deepset  repeat_v1_ctx_run2               all 100       15    85       53.3              0.0  1.0
+     deepset  repeat_v1_ctx_run3               all 100       15    85       53.3              0.0  1.0
+multilingual multilingual_v1_ctx                ar 200      100   100       49.0              0.0  0.9
+multilingual multilingual_v1_ctx                de 200      100   100       55.0              0.0  1.0
+multilingual multilingual_v1_ctx                es 200      100   100       59.0              0.0  1.0
+multilingual multilingual_v1_ctx                fr 200      100   100       58.0              0.0  1.0
+multilingual multilingual_v1_ctx                hi 200      100   100       33.0              0.0  0.9
+multilingual multilingual_v1_ctx                zh 200      100   100       48.0              0.0  0.9
+   notinject    notinject_v1_ctx    Common Queries 126        0   126        NaN              0.0  NaN
+   notinject    notinject_v1_ctx      Multilingual  84        0    84        NaN              0.0  NaN
+   notinject    notinject_v1_ctx Technique Queries  87        0    87        NaN              2.3  NaN
+   notinject    notinject_v1_ctx  Virtual Creation  42        0    42        NaN              0.0  NaN
+  obfuscated   obfuscated_v1_ctx            base64 200      100   100       68.0              0.0  1.0
+  obfuscated   obfuscated_v1_ctx         homoglyph 200      100   100       63.0              0.0  1.0
+  obfuscated   obfuscated_v1_ctx      html_comment 200      100   100       68.0              0.0  1.0
+  obfuscated   obfuscated_v1_ctx         leetspeak 200      100   100       63.0              0.0  1.0
+  obfuscated   obfuscated_v1_ctx             plain 200      100   100       60.0              0.0  1.0
+  obfuscated   obfuscated_v1_ctx          reversed 200      100   100       32.0              6.0  0.8
+  obfuscated   obfuscated_v1_ctx             rot13 200      100   100       39.0              5.0  0.8
+  obfuscated   obfuscated_v1_ctx            spaced 200      100   100       65.0              0.0  1.0
+  obfuscated   obfuscated_v1_ctx        zero_width 200      100   100       65.0              0.0  1.0

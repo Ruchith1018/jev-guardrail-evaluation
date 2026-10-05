@@ -1,0 +1,17 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# downloaded datasets, caches and run folders (re-created by the script)
+data/
+runs/
+cache/
+*.zip
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/

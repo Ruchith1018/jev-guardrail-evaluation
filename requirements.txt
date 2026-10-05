@@ -1,0 +1,10 @@
+httpx
+numpy
+pandas
+pyarrow
+matplotlib
+# baselines and translation (GPU recommended)
+torch
+transformers
+sentencepiece
+sacremoses
