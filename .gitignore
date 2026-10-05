@@ -4,9 +4,9 @@
 !.env.example
 
 # downloaded datasets, caches and run folders (re-created by the script)
-data/
-runs/
-cache/
+/data/
+/runs/
+/cache/
 *.zip
 
 # python
